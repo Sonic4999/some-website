@@ -1,6 +1,6 @@
 var CHUNK = {
-  canvasWidth: 600,
-  canvasHeight: 600,
+  canvasWidth: 720,
+  canvasHeight: 720,
   pixelSize: 20,
   KEY_MAPPING: {
     39: "right",

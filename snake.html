@@ -5,8 +5,8 @@
   <style>
     body {
       background-color: gray;
+      display: block;
     }
-
     .button {
       background-color: #9fcae0;
       border: none;
@@ -16,21 +16,38 @@
       font-size: 16px;
       cursor: pointer;
     }
-
     .button:hover {
       background: #82a7ba;
     }
-
     #chunk-game {
       background-color: black;
       display: block;
-      margin-left: auto;
-      margin-right: auto;
     }
   </style>
 </head>
 <body>
-  <canvas id="chunk-game" height="720" width="720"></canvas>
+  <canvas id="chunk-game" style = 'position: absolute; left: 0px; top: 0px;'></canvas>
+  
+  <script>
+    (function() {
+      var
+        htmlCanvas = document.getElementById('chunk-game');
+        context = htmlCanvas.getContext('2d');
+      
+        initialize();
+      
+        function initialize() {
+				  window.addEventListener('resize', resizeCanvas, false);		
+			  	resizeCanvas();
+			}
+      
+      function resizeCanvas() {
+				htmlCanvas.width = (Math.floor(window.innerWidth/20))*20;
+				htmlCanvas.height = (Math.floor(window.innerHeight/20))*20;
+			}
+      
+    })();
+ 	</script>
 
   <script type="text/javascript" src="chunk.js"></script>
   <script type="text/javascript" src="snake.js"></script>

@@ -29,6 +29,28 @@
 </head>
 <body>
   <canvas id="chunk-game" height="720" width="720"></canvas>
+  
+  <script>
+    (function() {
+      var
+        htmlCanvas = document.getElementById('chunk-game');
+        context = htmlCanvas.getContext('2d');
+      
+        initialize();
+      
+        function initialize() {
+				  window.addEventListener('resize', resizeCanvas, false);
+				
+			  	resizeCanvas();
+			}  
+      
+      function resizeCanvas() {
+				htmlCanvas.width = window.innerWidth;
+				htmlCanvas.height = window.innerHeight;
+			}
+      
+    })();
+ 	</script>
 
   <script type="text/javascript" src="chunk.js"></script>
   <script type="text/javascript" src="snake.js"></script>

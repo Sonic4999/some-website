@@ -4,48 +4,38 @@
 <head>
   <style>
     body {
-      background-color: black;
-    }
-    .button {
-      background-color: #9fcae0;
-      border: none;
-      color: white;
-      padding: 15px 25px;
-      text-align: center;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    .button:hover {
-      background: #82a7ba;
+      background-color: #0c0d0f;
+      margin: 0px;
+      padding: 0px;
     }
     #chunk-game {
-      background-color: black;
+      background-color: #0c0d0f;
       display: block;
-      overflow: auto;
+      overflow: hidden;
     }
   </style>
 </head>
 <body>
-  <canvas id="chunk-game" style = 'relative: absolute; left: 0px; top: 0px;'></canvas>
-  
+  <canvas id="chunk-game" style = 'position: absolute; left: 0px; top: 0px;'></canvas>
+
   <script>
     (function() {
       var
         htmlCanvas = document.getElementById('chunk-game');
         context = htmlCanvas.getContext('2d');
-      
+
         initialize();
-      
+
         function initialize() {
 				  window.addEventListener('resize', resizeCanvas, false);
 			  	resizeCanvas();
 			}
-      
+
       function resizeCanvas() {
 				htmlCanvas.width = (Math.floor(window.innerWidth/20))*20;
 				htmlCanvas.height = (Math.floor(window.innerHeight/20))*20;
 			}
-      
+
     })();
  	</script>
 
@@ -53,6 +43,5 @@
   <script type="text/javascript" src="snake.js"></script>
 
   <p></p>
-  <center><button onclick="location.href='snake.html'" class="button">Refresh Page</button></center>
 </body>
 </html>

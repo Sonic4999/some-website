@@ -4,8 +4,7 @@
 <head>
   <style>
     body {
-      background-color: gray;
-      display: block;
+      background-color: black;
     }
     .button {
       background-color: #9fcae0;
@@ -27,7 +26,7 @@
   </style>
 </head>
 <body>
-  <canvas id="chunk-game" style = 'position: absolute; left: 0px; top: 0px;'></canvas>
+  <canvas id="chunk-game" style = 'relative: absolute; left: 0px; top: 0px;'></canvas>
   
   <script>
     (function() {
@@ -38,7 +37,7 @@
         initialize();
       
         function initialize() {
-				  window.addEventListener('resize', resizeCanvas, false);		
+				  window.addEventListener('resize', resizeCanvas, false);
 			  	resizeCanvas();
 			}
       

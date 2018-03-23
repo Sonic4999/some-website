@@ -6,7 +6,18 @@
     body {
       background-color: gray;
     }
-
+    .button {
+      background-color: #9fcae0;
+      border: none;
+      color: white;
+      padding: 15px 25px;
+      text-align: center;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .button:hover {
+      background: #82a7ba;
+    }
     #chunk-game {
       background-color: black;
       display: block;
@@ -16,14 +27,12 @@
   </style>
 </head>
 <body>
-  
-<script>
-var h = window.innerHeight;
-</script>
-  
-  <canvas id="chunk-game" height=h width=h></canvas>
+  <canvas id="chunk-game" height="720" width="720"></canvas>
 
   <script type="text/javascript" src="chunk.js"></script>
   <script type="text/javascript" src="snake.js"></script>
+
+  <p></p>
+  <center><button onclick="location.href='snake.html'" class="button">Refresh Page</button></center>
 </body>
 </html>

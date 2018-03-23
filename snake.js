@@ -60,7 +60,7 @@ var advanceGame = function() {
   }
   if (ate(newSnake, CHUNK.gameBoundaries())) {
     CHUNK.endGame();
-    CHUNK.flashMessage("Whoops! you hit a wall!");
+    CHUNK.flashMessage("Whoops! You hit a wall!");
   }
   snake = newSnake;
   draw(snake, apple);
@@ -70,7 +70,7 @@ var changeDirection = function(direction) {
   snake[0].direction = direction;
 }
 
-var apple = { top: 8, left: 10 };
+var apple = CHUNK.randomLocation();
 var snake = [{ top: 1, left: 0, direction: "down" }, { top: 0, left: 0, direction: "down" }];
 
 CHUNK.executeNTimesPerSecond(advanceGame, 6);

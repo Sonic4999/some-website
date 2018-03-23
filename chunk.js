@@ -1,6 +1,8 @@
+var h = window.innerHeight;
+
 var CHUNK = {
-  canvasWidth: 720,
-  canvasHeight: 720,
+  canvasWidth: h,
+  canvasHeight: h,
   pixelSize: 20,
   KEY_MAPPING: {
     39: "right",

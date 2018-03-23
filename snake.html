@@ -5,7 +5,7 @@
   <style>
     body {
       background-color: gray;
-      overflow: hidden;
+      display: block;
     }
     .button {
       background-color: #9fcae0;
@@ -22,13 +22,11 @@
     #chunk-game {
       background-color: black;
       display: block;
-      margin-left: auto;
-      margin-right: auto;
     }
   </style>
 </head>
 <body>
-  <canvas id="chunk-game" height="720" width="720"></canvas>
+  <canvas id="chunk-game" style = 'position: absolute; left: 0px; top: 0px;'></canvas>
   
   <script>
     (function() {
@@ -39,10 +37,9 @@
         initialize();
       
         function initialize() {
-				  window.addEventListener('resize', resizeCanvas, false);
-				
+				  window.addEventListener('resize', resizeCanvas, false);		
 			  	resizeCanvas();
-			}  
+			}
       
       function resizeCanvas() {
 				htmlCanvas.width = window.innerWidth;

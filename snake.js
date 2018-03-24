@@ -1,3 +1,5 @@
+var score = 0;
+
 var draw = function(snakeToDraw, apple) {
   var drawableSnake = { color: "green", pixels: snakeToDraw };
   var drawableApple = { color: "red", pixels: [apple] };
@@ -59,15 +61,16 @@ var advanceGame = function() {
   var newSnake = moveSnake(snake);
   if (ate(newSnake, snake)) {
     CHUNK.endGame();
-    CHUNK.flashMessage("Whoops! You ate yourself! Press enter to restart.");
+    CHUNK.flashMessage("Whoops! You ate yourself! Your score was " + score + ". Press enter to restart.");
   }
   if (ate(newSnake, [apple])) {
+    score = score + 1;
     newSnake = growSnake(newSnake);
     apple = CHUNK.randomLocation();
   }
   if (ate(newSnake, CHUNK.gameBoundaries())) {
     CHUNK.endGame();
-    CHUNK.flashMessage("Whoops! You hit a wall! Press enter to restart.");
+    CHUNK.flashMessage("Whoops! You hit a wall! Your score was " + score + ". Press enter to restart.");
   }
   snake = newSnake;
   draw(snake, apple);

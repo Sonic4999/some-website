@@ -1,5 +1,15 @@
 var score = 0;
 
+var w = window.innerWidth;
+var h = window.innerHeight;
+
+var x = w * h;
+var a = -5.114345986519793e-12;
+var b = 1.792265576549075e-5;
+var c = 5.173667383175882;
+
+var speed = Math.round((a * (Math.pow(x, 2))) + (b * x) - c);
+
 var draw = function(snakeToDraw, apple) {
   var drawableSnake = { color: "green", pixels: snakeToDraw };
   var drawableApple = { color: "red", pixels: [apple] };
@@ -83,5 +93,5 @@ var changeDirection = function(direction) {
 var apple = CHUNK.randomLocation();
 var snake = [{ top: 1, left: 0, direction: "down" }, { top: 0, left: 0, direction: "down" }];
 
-CHUNK.executeNTimesPerSecond(advanceGame, 8);
+CHUNK.executeNTimesPerSecond(advanceGame, speed);
 CHUNK.onArrowKey(changeDirection);

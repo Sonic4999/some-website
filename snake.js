@@ -75,6 +75,7 @@ var advanceGame = function() {
   }
   if (ate(newSnake, [apple])) {
     score = score + 1;
+    document.getElementById("button").innerText = 'Score: ' + score;
     newSnake = growSnake(newSnake);
     apple = CHUNK.randomLocation();
   }

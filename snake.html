@@ -12,7 +12,7 @@
       background-color: #4CAF50;
       border: none;
       color: white;
-      padding: 15px 32px;
+      padding: 15px 26px;
       text-align: center;
       text-decoration: none;
       display: inline-block;
@@ -24,6 +24,9 @@
       background-color: #0c0d0f;
       display: block;
       overflow: hidden;
+    }
+    div {
+      text-align: center;
     }
   </style>
 </head>
@@ -44,18 +47,23 @@
 			}
 
       function resizeCanvas() {
-				htmlCanvas.width = (Math.floor(window.innerWidth/20))*20;
+				htmlCanvas.width = window.innerWidth;
 				htmlCanvas.height = ((Math.floor(window.innerHeight/20))*20)-80;
 			}
 
     })();
  	</script>
 
-  <script type="text/javascript" src="chunk.js"></script>
-  <script type="text/javascript" src="snake.js"></script>
+    <script type="text/javascript" src="chunk.js"></script>
+    <script type="text/javascript" src="snake.js"></script>
 
   <p></p>
 
-  <center><button class="button" id="button">Score: 0</button></center>
+  <div>
+    <button class="button" onclick="location.href='home.html'">Back to Home</button>
+    <button class="button" id="button">Score: 0</button>
+    <button class="button" onclick="location.href='https://goo.gl/forms/F2EPQTkadh0DsLSU2'">Form for feedback</button>
+  </div>
+
 </body>
 </html>

@@ -1,5 +1,5 @@
 var w = (window.innerWidth)/2;
-var h = (window.innerHeight)/2;
+var h = (((Math.floor(window.innerHeight/20))*20)-80)/2;
 
 var CHUNK = {
   canvasWidth: ((Math.floor(window.innerWidth/20))*20)-20,
@@ -114,6 +114,7 @@ var CHUNK = {
     var context = canvas.getContext('2d');
     context.font = '20pt Calibri';
     context.fillStyle = 'yellow';
+    context.textAlign = "center";
     context.fillText(message, w, h);
   }
 }

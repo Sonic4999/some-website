@@ -1,9 +1,10 @@
 var score = 0;
 
-var draw = function(snakeToDraw, apple) {
+var draw = function(snakeToDraw, apple, snake2ToDraw) {
   var drawableSnake = { color: "green", pixels: snakeToDraw };
   var drawableApple = { color: "red", pixels: [apple] };
-  var drawableObjects = [drawableSnake, drawableApple];
+  var drawableSnake2 = { color: "blue", pixels: snake2ToDraw };
+  var drawableObjects = [drawableSnake, drawableApple, drawableSnake2];
   CHUNK.draw(drawableObjects);
 }
 
@@ -74,7 +75,7 @@ var advanceGame = function() {
     CHUNK.flashMessage("Whoops! You hit a wall! Press enter to restart.");
   }
   snake = newSnake;
-  draw(snake, apple);
+  draw(snake, apple, snake2);
 }
 
 var changeDirection = function(direction) {
@@ -83,6 +84,7 @@ var changeDirection = function(direction) {
 
 var apple = CHUNK.randomLocation();
 var snake = [{ top: 1, left: 0, direction: "down" }, { top: 0, left: 0, direction: "down" }];
+var snake2 = [{ top: 5, left: 0}];
 
 CHUNK.executeNTimesPerSecond(advanceGame, 8);
 CHUNK.onArrowKey(changeDirection);

@@ -1,3 +1,6 @@
+var w = (window.innerWidth)/2;
+var h = (((Math.floor(window.innerHeight/20))*20)-80)/2;
+
 var CHUNK = {
   canvasWidth: ((Math.floor(window.innerWidth/20))*20)-20,
   canvasHeight: ((Math.floor(window.innerHeight/20))*20)-100,
@@ -7,6 +10,12 @@ var CHUNK = {
     40: "down",
     37: "left",
     38: "up"
+  },
+  KEY_MAPPING2: {
+    68: "D",
+    83: "S",
+    65: "A",
+    87: "W"
   },
   started: true,
   attrs: {},
@@ -33,6 +42,14 @@ var CHUNK = {
       if (CHUNK.KEY_MAPPING[e.which]) {
         e.preventDefault();
         callback(CHUNK.KEY_MAPPING[e.which]);
+      }
+    });
+  },
+  onArrowKey2: function(callback) {
+    document.addEventListener('keydown', function(e) {
+      if (CHUNK.KEY_MAPPING2[e.which]) {
+        e.preventDefault();
+        callback(CHUNK.KEY_MAPPING2[e.which]);
       }
     });
   },
@@ -97,6 +114,7 @@ var CHUNK = {
     var context = canvas.getContext('2d');
     context.font = '20pt Calibri';
     context.fillStyle = 'yellow';
-    context.fillText(message, 275, 100);
+    context.textAlign = "center";
+    context.fillText(message, w, h);
   }
 }

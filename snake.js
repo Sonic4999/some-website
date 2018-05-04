@@ -104,10 +104,6 @@ document.onkeydown = function(evt) {
 var advanceGame = function() {
   var newSnake2 = moveSnake2(snake2);
   var newSnake = moveSnake(snake);
-  if (ate(newSnake, snake)) {
-    CHUNK.endGame();
-    CHUNK.flashMessage("Whoops! You ate yourself, player 1! Press enter to restart.");
-  }
   if (ate(newSnake, [apple])) {
     score = score + 1;
     document.getElementById("button").innerText = 'P1 Score: ' + score;
@@ -129,10 +125,7 @@ var advanceGame = function() {
     CHUNK.flashMessage("Whoops! You hit player 2, player 1! Press enter to restart.");
   }
 
-  if (ate2(newSnake2, snake2)) {
-    CHUNK.endGame();
-    CHUNK.flashMessage("Whoops! You ate yourself, player 2! Press enter to restart.");
-  }
+
   if (ate2(newSnake2, [apple])) {
     score2 = score2 + 1;
     document.getElementById("button2").innerText = 'P2 Score: ' + score2;
